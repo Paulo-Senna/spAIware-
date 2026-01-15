@@ -43,19 +43,22 @@ Create a virtual environment and install dependencies:
 # Create project directory
 mkdir spaiware_poc
 cd spaiware_poc
-
+```
+```
 # Create virtual environment
 python3 -m venv venv
-
+```
+```
 # Activate environment (Linux/Mac)
 source venv/bin/activate
-
+```
+```
 # Activate environment (Windows)
 # venv\Scripts\activate
-
+```
+```
 # Install required libraries
 pip install flask psycopg2-binary
-
 ```
 
 ---
