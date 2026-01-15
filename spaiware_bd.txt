@@ -1,0 +1,22 @@
+
+-- Note: Ensure the password matches the one in server.py
+DO
+$do$
+BEGIN
+   IF NOT EXISTS (
+      SELECT FROM pg_catalog.pg_roles
+      WHERE  rolname = 'postgres') THEN
+      ALTER USER postgres WITH PASSWORD '1234';
+   END IF;
+END
+$do$;
+
+DROP TABLE IF EXISTS attack_logs;
+
+CREATE TABLE attack_logs (
+    id SERIAL PRIMARY KEY,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    target_model VARCHAR(100),
+    exfiltrated_data TEXT,
+    raw_payload TEXT
+);
